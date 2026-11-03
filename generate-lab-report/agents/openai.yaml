@@ -1,0 +1,13 @@
+interface:
+  display_name: 实验报告生成
+  short_description: 按固定Word模板生成多课程实验报告，附截图批注和逐任务交付文件
+  default_prompt: 使用 $generate-lab-report 根据我提供的实验内容生成Word实验报告，并按任务提供完整交付文件。
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
