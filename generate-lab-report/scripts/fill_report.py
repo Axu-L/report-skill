@@ -45,7 +45,7 @@ def fill(doc,cell,blocks,heading=True):
         fmt.space_before=Pt(0); fmt.space_after=Pt(0)
         fmt.line_spacing=1.0 if kind in ('code','command') else 1.5
         fmt.first_line_indent=Pt(24) if kind=='text' else Pt(0)
-        fmt.left_indent=Pt(24) if kind=='command' else Pt(0)
+        fmt.left_indent=Pt(24) if kind in ('code','command') else Pt(0)
         fmt.keep_with_next=kind in ('heading','label')
         fmt.widow_control=True
         p.alignment=WD_ALIGN_PARAGRAPH.CENTER if kind=='screenshot' else (WD_ALIGN_PARAGRAPH.JUSTIFY if kind=='text' else WD_ALIGN_PARAGRAPH.LEFT)
