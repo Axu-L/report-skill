@@ -20,26 +20,10 @@ generate-lab-report/
 
 ## 使用方法
 
-1. 把 `generate-lab-report` 放入技能目录，按 `SKILL.md` 工作流程读取实验指导书/题目/代码。
-2. 按 `references/template-and-content.md` 的 JSON 格式准备五区内容：
-
-```json
-{
-  "purpose": ["…"],
-  "principle": ["…"],
-  "process_pages": [["1. 题目原文", {"type":"code","text":"…"}, {"type":"screenshot","name":"任务1_运行结果.png","comment":"…"}]],
-  "results": ["实验结果：…"],
-  "summary": ["…"]
-}
-```
-
-3. 生成报告：
-
-```bash
-python generate-lab-report/scripts/fill_report.py 内容.json 报告.docx
-# 可选：--template 自定义模板.docx
-python generate-lab-report/scripts/check_layout.py 模板.docx 报告.docx --pdf 报告.pdf
-```
+1. **安装技能**：和AI发送“安装https://github.com/Axu-L/report-skill.git技能”
+2. **提供实验材料**：把实验指导书（PDF/Word/图片）、题目、代码或操作说明直接发给 AI。
+3. **自动生成报告**：AI 按 `SKILL.md` 工作流程自动完成五区正文填写、排版、截图占位与批注，输出填好的 `实验报告.docx` 及任务源码目录（内部会调用 `scripts/fill_report.py` 与 `scripts/check_layout.py`，无需手动操作）。
+4. **可选**：实验材料里附了自己的 Word 模板时，技能会优先使用该模板；生成后请在 Word/WPS 中复核分页与批注。
 
 ## 核心规则速览
 
